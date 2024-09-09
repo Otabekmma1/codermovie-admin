@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8c*8*q))$2#-gs_8g_=fp%rtm-m^kla(b_xh%32qep^*lvi3bl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['coder-movie-bot-production.up.railway.app',  'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['https://codermovie-admin-production.up.railway.app/',  'localhost', '127.0.0.1']
 
 TOKEN = "7511166749:AAEXfRoxFc-LD2UYSb5HczJY8i-3oUCQVSY"
 ADMINS = [5541564692]
