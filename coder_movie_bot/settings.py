@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import sys
 from pathlib import Path
 import os
-import environ
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -83,18 +83,10 @@ WSGI_APPLICATION = 'coder_movie_bot.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
-
-# Environment variables
-env = environ.Env()
-# Reading .env file
-environ.Env.read_env()
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 DATABASES = {
-    'default': env.db(),  # Reads DATABASE_URL from .env
-}
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 
+}
 
 # LOGGING = {
 #     'version': 1,
