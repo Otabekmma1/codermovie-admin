@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import sys
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,18 +82,11 @@ WSGI_APPLICATION = 'coder_movie_bot.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
-load_dotenv()
-
+env = environ.Env()
+environ.Env.read_env()
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DATABASE_NAME'),
-        'USER': os.getenv('DATABASE_USER'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': os.getenv('DATABASE_HOST'),
-        'PORT': os.getenv('DATABASE_PORT'),
-    }
+    'default': env.db(),  # DATABASE_URL muhit o'zgaruvchisini o'qish
 }
 
 # LOGGING = {
