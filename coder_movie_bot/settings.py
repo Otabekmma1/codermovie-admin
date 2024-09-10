@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import sys
 from pathlib import Path
 import os
-import environ
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+DATABASE_URL = "postgresql://postgres:Otabek2007@localhost:5432/coderdatabase"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -28,9 +28,6 @@ SECRET_KEY = 'django-insecure-8c*8*q))$2#-gs_8g_=fp%rtm-m^kla(b_xh%32qep^*lvi3bl
 DEBUG = True
 
 ALLOWED_HOSTS = ['codermovie-admin-production.up.railway.app', 'localhost', '127.0.0.1']
-
-TOKEN = "7511166749:AAEXfRoxFc-LD2UYSb5HczJY8i-3oUCQVSY"
-ADMINS = [5541564692]
 
 # Application definition
 
@@ -82,11 +79,8 @@ WSGI_APPLICATION = 'coder_movie_bot.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
-env = environ.Env()
-environ.Env.read_env()
-
 DATABASES = {
-    'default': env.db(),  # DATABASE_URL muhit o'zgaruvchisini o'qish
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),  # DATABASE_URL muhit o'zgaruvchisini o'qish
 }
 
 # LOGGING = {
