@@ -17,18 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls.static import static
 from . import settings
-from rest_framework.routers import DefaultRouter
-from bot_admin.views import *
 from django.urls import path, include
 
 
-router = DefaultRouter()
-router.register('channels', ChannelViewSet)
-router.register('movies', MovieViewSet)
-router.register('users', UserViewSet)
+
 urlpatterns = [
     path('', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('api/', include('bot_admin.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
