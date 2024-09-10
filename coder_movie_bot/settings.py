@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import sys
 from pathlib import Path
 import os
+import environ
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,12 +83,12 @@ WSGI_APPLICATION = 'coder_movie_bot.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
-import environ
 
 # Environment variables
 env = environ.Env()
 # Reading .env file
 environ.Env.read_env()
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 DATABASES = {
