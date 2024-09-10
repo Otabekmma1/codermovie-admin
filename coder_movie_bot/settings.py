@@ -79,33 +79,35 @@ WSGI_APPLICATION = 'coder_movie_bot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+import environ
+
+# Environment variables
+env = environ.Env()
+# Reading .env file
+environ.Env.read_env()
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'coderdatabase',
-        'USER': 'postgres',
-        'PASSWORD': 'Otabek2007',
-        'HOST': 'localhost',  # Agar PostgreSQL boshqa serverda bo'lsa, o'zgartiring
-        'PORT': '5432',       # Agar PostgreSQL default portdan boshqa portda ishlayotgan bo'lsa, o'zgartiring
-    }
+    'default': env.db(),  # Reads DATABASE_URL from .env
 }
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.db.backends': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'level': 'DEBUG',
+#             'handlers': ['console'],
+#         },
+#     },
+# }
 
 
 # Password validation
