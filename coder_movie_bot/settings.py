@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8c*8*q))$2#-gs_8g_=fp%rtm-m^kla(b_xh%32qep^*lvi3bl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['codermovie-admin-production.up.railway.app', 'localhost', '127.0.0.1']
 
 TOKEN = "7511166749:AAEXfRoxFc-LD2UYSb5HczJY8i-3oUCQVSY"
 ADMINS = [5541564692]
@@ -81,10 +81,16 @@ WSGI_APPLICATION = 'coder_movie_bot.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'coderdatabase',
+        'USER': 'postgres',
+        'PASSWORD': 'Otabek2007',
+        'HOST': 'localhost',  # Agar PostgreSQL boshqa serverda bo'lsa, o'zgartiring
+        'PORT': '5432',       # Agar PostgreSQL default portdan boshqa portda ishlayotgan bo'lsa, o'zgartiring
     }
 }
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -151,4 +157,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# CSRF_TRUSTED_ORIGINS = ['https://codermovie-admin-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://codermovie-admin-production.up.railway.app']
