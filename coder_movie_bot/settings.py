@@ -26,7 +26,7 @@ DATABASE_URL = "postgresql://postgres:Otabek2007@localhost:5432/coderdb"
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['codermovie-admin-production.up.railway.app', 'localhost', '127.0.0.1']
 
