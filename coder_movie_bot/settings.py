@@ -22,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8c*8*q))$2#-gs_8g_=fp%rtm-m^kla(b_xh%32qep^*lvi3bl'
-DATABASE_URL = "postgresql://postgres:XLhLasEhMwuMaAfiTgmpuWPHPkxchXkZ@postgres.railway.internal:5432/railway"
-# DATABASE_URL = "postgresql://coder:Otabek2007@localhost:5432/coderdatabase"
+DATABASE_URL = "postgresql://postgres:Otabek2007@localhost:5432/coderdb"
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -82,7 +81,7 @@ WSGI_APPLICATION = 'coder_movie_bot.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),  # DATABASE_URL muhit o'zgaruvchisini o'qish
+    'default': dj_database_url.config(default=DATABASE_URL),  # DATABASE_URL muhit o'zgaruvchisini o'qish
 }
 
 LOGGING = {
