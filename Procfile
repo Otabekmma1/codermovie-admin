@@ -1,1 +1,1 @@
-web: gunicorn 'coder_movie_bot.wsgi'
+web: gunicorn coder_movie_bot.wsgi:application
