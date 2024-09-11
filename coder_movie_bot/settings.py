@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8c*8*q))$2#-gs_8g_=fp%rtm-m^kla(b_xh%32qep^*lvi3bl'
-DATABASE_URL = "postgresql://postgres:Otabek2007@localhost:5432/coderdatabase"
+DATABASE_URL = "postgresql://postgres:Otabek2007@codermovie-admin-production.up.railway.app/:5432/coderdatabase"
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
