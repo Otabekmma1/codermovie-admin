@@ -5,7 +5,7 @@ from django.conf import settings
 
 @admin.register(Channel)
 class ChannelAdmin(admin.ModelAdmin):
-    list_display = ('name', 'url')
+    list_display = ('channel_id', 'name', 'url')
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
