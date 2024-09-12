@@ -22,7 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-8c*8*q))$2#-gs_8g_=fp%rtm-m^kla(b_xh%32qep^*lvi3bl'
+<<<<<<< HEAD
 DATABASE_URL = "postgresql://postgres:Otabek2007@infinite-shore-30228-35b6746b9b22.herokuapp.com:5432/moviedb"
+=======
+DATABASE_URL = "postgresql://postgres:Otabek2007@infinite-shore-30228-35b6746b9b22.herokuapp.com:5432/coderdb"
+>>>>>>> 780fac56b96f49f2f2798332f8035bc08e0595e2
 # DATABASE_URL = "postgresql://postgres:Otabek2007@db:5432/coderdatabase"
 
 
